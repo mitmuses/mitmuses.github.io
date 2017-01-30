@@ -8,43 +8,43 @@ app.config(function($routeProvider, $locationProvider) {
 
         // home route
         .when('/', {
-            templateUrl : '/pages/home.html',
+            templateUrl : '/views/home.html',
             controller  : 'home-controller'
         })
 
         // news route
         .when('/news', {
-            templateUrl : '/pages/news.html',
+            templateUrl : '/views/news.html',
             controller  : 'news-controller'
         })
 
         // events route
         .when('/events', {
-            templateUrl : '/pages/events.html',
+            templateUrl : '/views/events.html',
             controller  : 'events-controller'
         })
 
         // members route
         .when('/members', {
-            templateUrl : '/pages/members.html',
+            templateUrl : '/views/members.html',
             controller  : 'members-controller'
         })
 
         // media route
         .when('/media', {
-            templateUrl : '/pages/media.html',
+            templateUrl : '/views/media.html',
             controller  : 'media-controller'
         })
 
         // auditions route
         .when('/auditions', {
-            templateUrl : '/pages/auditions.html',
+            templateUrl : '/views/auditions.html',
             controller  : 'auditions-controller'
         })
 
         // contact route
         .when('/contact', {
-            templateUrl : '/pages/contact.html',
+            templateUrl : '/views/contact.html',
             controller  : 'contact-controller'
         });
 
