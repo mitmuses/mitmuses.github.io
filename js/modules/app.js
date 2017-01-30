@@ -52,3 +52,14 @@ app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
 });
+
+// set up Firebase
+
+var config = {
+    apiKey: "AIzaSyCh8DTmFzIZD_qwDcW3lnOhY7VldKAeGs8",
+    authDomain: "mitmuses-8c97c.firebaseapp.com",
+    databaseURL: "https://mitmuses-8c97c.firebaseio.com",
+    storageBucket: "mitmuses-8c97c.appspot.com",
+    messagingSenderId: "679403663997"
+};
+firebase.initializeApp(config);

@@ -1,1 +1,25 @@
 <h1>{{ title }}</h1>
+
+<!-- Testing Firebase, this can be changed later -->
+<div ng-repeat="member in members">
+	<img width="100px" src="{{member.photo}}">
+	<h3>{{ member.name }}</h3>
+	<p>{{ member.year }}</p>
+	<p>{{ member.major }}</p>
+	<p>Other Activities</p>
+	<ul>
+		<li ng-repeat="activity in member.other_activities">{{ activity }}</li>
+	</ul>
+	<p>Arrangements</p>
+	<ul>
+		<li ng-repeat="arrangement in member.arrangements">{{ arrangement }}</li>
+	</ul>
+	<p>Positions</p>
+	<ul>
+		<li ng-repeat="position in member.positions">{{ position }}</li>
+	</ul>
+	<p>Solos</p>
+	<ul>
+		<li ng-repeat="solo in member.solos">{{ solo }}</li>
+	</ul>
+</div>
