@@ -1,1 +1,1 @@
-# mitmuses.github.io
+# MIT Muses Website
