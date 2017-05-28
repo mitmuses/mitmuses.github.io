@@ -80,6 +80,7 @@ header h1.title {
 		padding-left: 0;
 	}
 	nav ul li {
-		padding: 0.2em 0.8em;
+		padding: 0 0.8em;
+		padding-bottom: 0.6em;
 	}
 }
