@@ -17,6 +17,9 @@
 	<!-- FONT AWESOME -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Poppins:300" rel="stylesheet">
+
 	<!-- STYLESHEETS -->
 	<link rel="stylesheet" type="text/css" href="/css/base.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -39,28 +42,28 @@
 
 <body ng-app="app">
 
-	<!-- HEADER AND NAVBAR -->
+	<!-- NAVBAR -->
 
-	<header>
-		<nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">MIT Muses</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/"><i class="fa fa-home"></i> &nbsp; home</a></li>
-                    <li><a href="/news"><i class="fa fa-newspaper-o"></i> &nbsp; news</a></li>
-                    <li><a href="/events"><i class="fa fa-calendar-o"></i> &nbsp; events</a></li>
-                    <li><a href="/members"><i class="fa fa-users"></i> &nbsp; members</a></li>
-                    <li><a href="/media"><i class="fa fa-camera-retro"></i> &nbsp;media</a></li>
-                    <li><a href="/auditions"><i class="fa fa-music"></i> &nbsp; auditions</a></li>
-                    <li><a href="/contact"><i class="fa fa-envelope"></i> &nbsp; contact</a></li>
-                </ul>
+	<nav>
+        <div>
+            <div>
+                <a href="/" class="logo"><img src="/img/logo.png"/></a>
             </div>
-        </nav>
-	</header>
+            <div>
+	            <ul>
+	                <li><a href="/">home</a></li>
+	                <li><a href="/news">news</a></li>
+	                <li><a href="/events">events</a></li>
+	                <li><a href="/members">members</a></li>
+	                <li><a href="/media">media</a></li>
+	                <li><a href="/auditions">auditions</a></li>
+	                <li><a href="/contact">contact</a></li>
+	            </ul>
+            </div>
+        </div>
+    </nav>
 
-	<div class="container">
+	<div>
 
 		<!-- WHERE VIEWS ARE INJECTED -->
 		<div ng-view></div>

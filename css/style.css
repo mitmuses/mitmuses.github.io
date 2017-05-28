@@ -1,7 +1,48 @@
 /* HOME PAGE STYLES */
 
-#home {
+#home .fs-bg {
+    position: fixed;
+    top: 84px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
 
+#home .fs-overlay {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8));
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+}
+
+#home .fs-video {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#home .fs-overlay .content {
+	color: white;
+	font-family: 'Josefin Sans';
+	text-align: center;
+	margin: auto;
+	font-size: 2em;
+}
+
+#home .fs-overlay .title {
+	font-weight: 700;
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+#home .fs-overlay .subtitle {
+	font-size: 1em;
 }
 
 /* NEWS PAGE STYLES */
@@ -18,8 +59,26 @@
 
 /* MEMBERS PAGE STYLES */
 
-#members {
+#members .member-gallery {
+	width: 80%;
+	margin: auto;
+	padding: 4em;
+}
 
+#members .member {
+	width: 25%;
+	display: inline-block;
+	padding: 1em;
+	margin: auto;
+	vertical-align: top;
+}
+
+#members .member .photo {
+	border-radius: 50% 50%;
+}
+
+#members .member .intro {
+	text-align: center;
 }
 
 /* MEDIA PAGE STYLES */
@@ -40,3 +99,46 @@
 
 }
 
+@media (min-aspect-ratio: 16/9) {
+	#home .fs-video {
+	    height: 200%;
+	    top: -50%;
+	}
+}
+
+@media (max-aspect-ratio: 16/9) {
+	#home .fs-video {
+		width: 200%;
+		left: -50%;
+	}
+}
+
+@media (max-width: 767px) {
+
+	#home .fs-bg {
+		background: url('../assets/loop-cover.png') center center / cover no-repeat;
+		top: 0;
+	}
+
+	#home .fs-video {
+		display: none;
+	}
+
+	#home .fs-overlay .content {
+		font-size: 1em;
+		padding: 1em;
+	}
+
+	#home .fs-overlay .content .subtitle {
+		font-size: 1.5em;
+	}
+
+	#members .member-gallery {
+		width: 100%;
+	}
+
+	#members .member {
+		width: 100%;
+		display: block;
+	}
+}
