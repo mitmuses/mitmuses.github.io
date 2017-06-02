@@ -116,12 +116,23 @@
 @media (max-width: 767px) {
 
 	#home .fs-bg {
-		background: url('../assets/loop-cover.png') center center / cover no-repeat;
-		top: 0;
+		top: 76px;
+		width: 100%;
+		height: auto;
+		display: flex;
 	}
 
 	#home .fs-video {
-		display: none;
+		width: 100%;
+		height: auto;
+		top: 0;
+		left: 0;
+	}
+
+	#home .fs-overlay {
+		width: 100%;
+		height: auto;
+		background: linear-gradient(0deg, rgba(130, 24, 89, 0), rgba(102, 12, 78, 0.8));
 	}
 
 	#home .fs-overlay .content {
