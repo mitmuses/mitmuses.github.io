@@ -5,11 +5,12 @@
 
 	<div class="member-gallery">
 		<div ng-repeat="member in members" class="member">
-			
-			<center><img width="120px" src="{{member.photo}}" class="photo">
-			<h3>{{ member.name }}</h3>
-			<h4><span ng-repeat="position in member.positions">{{position}} {{$last ? '' : ($index==member.positions.length-2) ? ' and ' : ', '}}</span></h4>
-			<p>{{ member.major }} &bull; {{ member.year }}</p>
+			<img width="120px" src="{{member.photo}}" class="photo">
+			<div class="intro">
+				<h3 class="member-name">{{ member.name }}</h3>
+				<h4 class="member-position"><span ng-repeat="position in member.positions">{{position}} {{$last ? '' : ($index==member.positions.length-2) ? ' and ' : ', '}}</span></h4>
+				<p class="member-major">{{ member.major }} &bull; {{ member.year }}</p>
+			</div>
 		</div>
 
 		<center><h1>Alumni</h1></center>

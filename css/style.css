@@ -60,7 +60,7 @@
 /* MEMBERS PAGE STYLES */
 
 #members .member-gallery {
-	width: 60%;
+	width: 80%;
 	margin: auto;
 	padding: 4em;
 }
@@ -71,6 +71,7 @@
 	padding: 1em;
 	margin: auto;
 	vertical-align: top;
+	text-align: center;
 }
 
 #members .member .photo {
@@ -78,7 +79,25 @@
 }
 
 #members .member .intro {
-	text-align: center;
+	margin-top: 1.5em;
+}
+
+#members .member .intro > * {
+	margin: 0.25em 0;
+}
+
+#members .member .intro .member-name {
+	font-size: 1.25em;
+}
+
+#members .member .intro .member-position {
+	font-size: 1em;
+	color: #707070;
+}
+
+#members .member .intro .member-major {
+	font-size: 0.8em;
+	margin: 0.5em 0;
 }
 
 /* MEDIA PAGE STYLES */
