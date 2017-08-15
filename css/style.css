@@ -2,7 +2,7 @@
 
 #home .fs-bg {
     position: fixed;
-    top: 84px;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -32,7 +32,7 @@
 	font-family: 'Josefin Sans';
 	text-align: center;
 	margin: auto;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 #home .fs-overlay .title {
@@ -60,7 +60,7 @@
 /* MEMBERS PAGE STYLES */
 
 #members .member-gallery {
-	width: 80%;
+	width: 60%;
 	margin: auto;
 	padding: 4em;
 }
@@ -116,7 +116,7 @@
 @media (max-width: 767px) {
 
 	#home .fs-bg {
-		top: 76px;
+		top: 0;
 		width: 100%;
 		height: auto;
 		display: flex;
