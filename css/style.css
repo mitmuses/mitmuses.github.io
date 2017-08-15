@@ -137,30 +137,36 @@
 	#home .fs-bg {
 		top: 0;
 		width: 100%;
-		height: auto;
+		height: 100%;
 		display: flex;
 	}
 
 	#home .fs-video {
-		width: 100%;
+		/*width: 100%;
 		height: auto;
 		top: 0;
 		left: 0;
+		*/
+		display: none;
 	}
 
 	#home .fs-overlay {
 		width: 100%;
 		height: auto;
-		background: linear-gradient(0deg, rgba(130, 24, 89, 0), rgba(102, 12, 78, 0.8));
+		background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../assets/loop-cover.png');
+		background-size: cover;
+		background-position: 50% 50%;
 	}
 
 	#home .fs-overlay .content {
-		font-size: 1em;
-		padding: 1em;
+		font-size: 0.8em;
+		padding: 4em;
+		margin-top: 2em;
 	}
 
 	#home .fs-overlay .content .subtitle {
 		font-size: 1.5em;
+		margin: auto;
 	}
 
 	#members .member-gallery {
