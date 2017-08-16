@@ -139,7 +139,9 @@
 }
 
 #auditions .content {
+	width: 60%;
 	padding: 2em;
+	margin: auto;
 }
 
 /* CONTACT PAGE STYLES */
@@ -227,6 +229,11 @@
 	#members .member {
 		width: 100%;
 		display: block;
+	}
+
+	#auditions .content {
+		width: 100%;
+		padding: 2em;
 	}
 
 	#contact .content {

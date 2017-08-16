@@ -92,6 +92,19 @@ header h1.title {
 	text-transform: uppercase;
 }
 
+img.card {
+	border: 8px solid #f8f8f8;
+	margin: 0 2em;
+}
+
+img.card.left {
+	float: left;
+}
+
+img.card.right {
+	float: right;
+}
+
 @media (max-width: 763px) {
 	nav > div {
 		text-align: left;
@@ -115,5 +128,10 @@ header h1.title {
 	}
 	header {
 		padding-top: 6em;
+	}
+	img.card {
+		width: 100%;
+		height: auto;
+		margin: 2em auto;
 	}
 }
