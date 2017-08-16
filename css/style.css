@@ -53,6 +53,10 @@
 	background-position: 50% 25%;
 }
 
+#news .content {
+	padding: 2em;
+}
+
 /* EVENTS PAGE STYLES */
 
 #events header {
@@ -118,12 +122,20 @@
 	background-position: 50% 25%;
 }
 
+#media .content {
+	padding: 2em;
+}
+
 /* AUDITIONS PAGE STYLES */
 
 #auditions header {
 	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/auditions.jpg');
 	background-size: cover;
 	background-position: 50% 25%;
+}
+
+#auditions .content {
+	padding: 2em;
 }
 
 /* CONTACT PAGE STYLES */
@@ -138,7 +150,7 @@
 	width: 60%;
 	text-align: center;
 	margin: auto;
-	padding: 4em;
+	padding: 2em;
 }
 
 #contact .block {
