@@ -47,17 +47,27 @@
 
 /* NEWS PAGE STYLES */
 
-#news {
-
+#news header {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/news.jpg');
+	background-size: cover;
+	background-position: 50% 25%;
 }
 
 /* EVENTS PAGE STYLES */
 
-#events {
-
+#events header {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/events.jpg');
+	background-size: cover;
+	background-position: 50% 15%;
 }
 
 /* MEMBERS PAGE STYLES */
+
+#members header {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/members.jpg');
+	background-size: cover;
+	background-position: 50% 30%;
+}
 
 #members .member-gallery {
 	width: 80%;
@@ -102,20 +112,45 @@
 
 /* MEDIA PAGE STYLES */
 
-#media {
-
+#media header {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/media.jpg');
+	background-size: cover;
+	background-position: 50% 25%;
 }
 
 /* AUDITIONS PAGE STYLES */
 
-#auditions {
-
+#auditions header {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/auditions.jpg');
+	background-size: cover;
+	background-position: 50% 25%;
 }
 
 /* CONTACT PAGE STYLES */
 
-#contact {
+#contact header {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/contact.jpg');
+	background-size: cover;
+	background-position: 50% 25%;
+}
 
+#contact .content {
+	width: 60%;
+	text-align: center;
+	margin: auto;
+	padding: 4em;
+}
+
+#contact .block {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 2em;
+	text-align: left;
+}
+
+#contact h4 {
+	font-weight: bold;
+	margin-top: 2em;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -175,6 +210,15 @@
 
 	#members .member {
 		width: 100%;
+		display: block;
+	}
+
+	#contact .content {
+		width: 100%;
+		padding: 2em;
+	}
+
+	#contact .block {
 		display: block;
 	}
 }
