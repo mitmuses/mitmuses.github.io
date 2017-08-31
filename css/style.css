@@ -54,7 +54,17 @@
 }
 
 #news .content {
-	padding: 2em;
+	width: 60%;
+	padding-top: 2em;
+	margin: auto;
+}
+
+#news .post {
+	padding: 0.5em 0;
+}
+
+#news .post h3 {
+	font-weight: 600;
 }
 
 /* EVENTS PAGE STYLES */
@@ -251,6 +261,10 @@
 		-webkit-column-count: 1;
 	    -moz-column-count: 1;
 	    column-count: 1;
+	}
+
+	#news .content {
+		width: 80%;
 	}
 
 	#auditions .content {
