@@ -10,6 +10,4 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 	$scope.members = $firebaseArray(members);
 	$scope.alumni = $firebaseArray(alumni);
 
-	
-
 });

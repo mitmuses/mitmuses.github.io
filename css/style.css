@@ -83,6 +83,10 @@
 	padding: 4em;
 }
 
+#members .member-gallery h1 {
+	margin-top: 2em;
+}
+
 #members .member {
 	width: 25%;
 	display: inline-block;
@@ -116,6 +120,17 @@
 #members .member .intro .member-major {
 	font-size: 0.8em;
 	margin: 0.5em 0;
+}
+
+#members ul {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    list-style-type: none;
+    padding-left: 0;
+    width: 90%;
+   	margin: auto;
+    margin-top: 2em;
 }
 
 /* MEDIA PAGE STYLES */
@@ -229,6 +244,13 @@
 	#members .member {
 		width: 100%;
 		display: block;
+	}
+
+	#members ul {
+		width: 100%;
+		-webkit-column-count: 1;
+	    -moz-column-count: 1;
+	    column-count: 1;
 	}
 
 	#auditions .content {
