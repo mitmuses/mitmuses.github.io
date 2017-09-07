@@ -10,6 +10,7 @@
 				<h3 class="member-name">{{ member.name }}</h3>
 				<h4 class="member-position"><span ng-repeat="position in member.positions">{{position}}{{$last ? '' : ($index==member.positions.length-2) ? ' and ' : ', '}}</span></h4>
 				<p class="member-major">{{ member.major }} &bull; {{ member.year }}</p>
+				<p class="member-activities"><span ng-repeat="activity in member.other_activities">{{activity}}{{$last ? '' : ($index==member.other_activities.length-2) ? ' and ' : ', '}}</span></p>
 			</div>
 		</div>
 		<center><h1>Alumni</h1></center>

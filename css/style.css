@@ -132,6 +132,11 @@
 	margin: 0.5em 0;
 }
 
+#members .member .intro .member-activities {
+	font-size: 0.8em;
+	margin: 0.5em 0;
+}
+
 #members ul {
     -webkit-column-count: 4;
     -moz-column-count: 4;
