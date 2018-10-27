@@ -94,12 +94,13 @@ tr {
 }
 
 .photo {
-	width: 100%;
+	width: 90%;
 	border: 8px solid white;
 	border-radius: 4px;
 	box-shadow: 0px 0px 4px 1px #dedede;
 	transition: 0.2s;
-	margin-top: 12px;
+	margin: 12px auto;
+	margin-bottom: 0;
 }
 
 #shapes {
