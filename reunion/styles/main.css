@@ -59,6 +59,15 @@ a {
 	text-decoration: underline;
 }
 
+#footer {
+	margin-top: 36px;
+}
+
+#footer p {
+	text-align: center;
+	font-size: 0.5em;
+	color: #dcdcdc;
+}
 
 td {
 	vertical-align: top;
@@ -90,6 +99,7 @@ tr {
 	border-radius: 4px;
 	box-shadow: 0px 0px 4px 1px #dedede;
 	transition: 0.2s;
+	margin-top: 12px;
 }
 
 #shapes {
@@ -160,6 +170,7 @@ ul {
 ul.social {
 	text-align: center;
 	font-size: 1.25em;
+	margin-bottom: 12px;
 }
 ul.social li {
 	width: 18px;
