@@ -98,13 +98,13 @@ tr {
 	position: absolute;
 	z-index: -1;
 	top: 100vh;
+	left: 0;
 	animation: fall 120s linear;
 }
 
 .shape {
 	animation: fadein 500ms;
 	opacity: 1;
-	transform-origin: 0 0;
 }
 
 .triangle {
