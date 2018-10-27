@@ -205,12 +205,15 @@ ul.social a:hover {
 
 @media screen and (max-width: 960px) {
 	.letter {
-		padding: 40px;
+		padding: 30px;
 	}
 	td {
 		display: block;
 	}
 	.event-time {
 		padding-right: 0px;
+	}
+	.letter {
+		margin-top: 6vh;
 	}
 }
