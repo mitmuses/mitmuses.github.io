@@ -10,6 +10,12 @@ a {
 	color: inherit;
 }
 
+.intro {
+	font-family: 'Sacramento', sans-serif;
+	font-size: 2.5em;
+	font-weight: normal;
+	margin: 0 auto;
+}
 .title {
 	font-family: 'Josefin Sans', sans-serif;
 	color: #a33e99;
@@ -50,6 +56,7 @@ a {
 .letterhead {
 	text-align: center;
 	margin: 24px auto;
+	font-size: 1.25em;
 }
 .letterbody {
 	margin-top: 60px;
@@ -57,6 +64,11 @@ a {
 .letterbody a {
 	color: #a33e99;
 	text-decoration: underline;
+}
+.signoff {
+	text-align: center;
+	font-family: 'Josefin Sans', sans-serif;
+	margin-top: 36px;
 }
 
 #footer {
@@ -79,7 +91,7 @@ tr {
 	margin-bottom: 24px;
 }
 .event-time {
-	width: 180px;
+	width: 200px;
 }
 .event-title {
 	font-weight: bold;
@@ -88,6 +100,7 @@ tr {
 }
 .event-description {
 	opacity: 0.8;
+	font-size: 0.8em;
 }
 .event-title, .event-description {
 	display: block;
@@ -159,7 +172,7 @@ tr {
 
 .button:hover {
 	cursor: pointer;
-	box-shadow: 0px 0px 8px 0px #a33e99;
+	box-shadow: 0px 0px 12px 0px #a33e99;
 	transition: 0.1s;
 }
 
