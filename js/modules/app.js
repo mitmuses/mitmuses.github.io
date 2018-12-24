@@ -12,18 +12,6 @@ app.config(function($routeProvider, $locationProvider) {
             controller  : 'home-controller'
         })
 
-        // news route
-        .when('/news', {
-            templateUrl : '/views/news.html',
-            controller  : 'news-controller'
-        })
-
-        // events route
-        .when('/events', {
-            templateUrl : '/views/events.html',
-            controller  : 'events-controller'
-        })
-
         // members route
         .when('/members', {
             templateUrl : '/views/members.html',
