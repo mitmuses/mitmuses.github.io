@@ -25,7 +25,7 @@ app.config(function($routeProvider, $locationProvider) {
         })
 
         // auditions route
-        .when('/auditions', {
+        .when('/auditions/', {
             templateUrl : '/views/auditions.html',
             controller  : 'auditions-controller'
         })
@@ -34,10 +34,16 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/contact', {
             templateUrl : '/views/contact.html',
             controller  : 'contact-controller'
+        })
+
+        .otherwise({
+            redirectTo: '/'
         });
 
-
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
 
 });
 

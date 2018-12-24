@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML5>
 <html>
 
 <head>
@@ -35,9 +35,6 @@
     <script src="//gstatic.com/firebasejs/3.6.7/firebase.js"></script>
 	<script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
-	<!-- SET BASE URL -->
-	<base href="/">
-
 </head>
 
 <body ng-app="app">
@@ -52,7 +49,6 @@
             <div>
 	            <ul>
 	                <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">home</span></a></li>
-	                <!-- <li><a href="/news"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="nav-label">news</span></a></li> -->
 	                <li><a href="/members"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">members</span></a></li>
 	                <li><a href="/media"><i class="fa fa-camera" aria-hidden="true"></i><span class="nav-label">media</span></a></li>
 	                <li><a href="/auditions"><i class="fa fa-microphone" aria-hidden="true"></i><span class="nav-label">auditions</span></a></li>
@@ -62,7 +58,7 @@
         </div>
     </nav>
 
-	<div>
+	<div id="view-container">
 
 		<!-- WHERE VIEWS ARE INJECTED -->
 		<div ng-view></div>
@@ -75,11 +71,9 @@
 	<!-- ANGULAR CONTROLLERS -->
 	<script src="/js/controllers/auditions-controller.js"></script>
 	<script src="/js/controllers/contact-controller.js"></script>
-	<script src="/js/controllers/events-controller.js"></script>
 	<script src="/js/controllers/home-controller.js"></script>
 	<script src="/js/controllers/media-controller.js"></script>
 	<script src="/js/controllers/members-controller.js"></script>
-	<script src="/js/controllers/news-controller.js"></script>
 
 </body>
 
