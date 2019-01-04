@@ -4,6 +4,8 @@
 	</header>
 
 	<div class="member-gallery">
+		<!-- ng-repeat tells Angular to render this block of HTML for every member in the members array -->
+		<!-- the members array is found in the members controller under js/controllers -->
 		<div ng-repeat="member in members" class="member">
 			<img width="120px" src="{{member.photo}}" class="photo">
 			<div class="intro">

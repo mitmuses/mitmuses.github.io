@@ -45,40 +45,6 @@
 	font-size: 1em;
 }
 
-/* NEWS PAGE STYLES */
-
-#news header {
-	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/news.jpg');
-	background-size: cover;
-	background-position: 50% 25%;
-}
-
-#news .content {
-	width: 60%;
-	padding-top: 2em;
-	margin: auto;
-}
-
-#news .post {
-	padding: 0.5em 0;
-}
-
-#news .post h3 {
-	font-weight: 600;
-}
-
-/* EVENTS PAGE STYLES */
-
-#events header {
-	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/events.jpg');
-	background-size: cover;
-	background-position: 50% 15%;
-}
-
-#events .content {
-	padding: 2em;
-}
-
 /* MEMBERS PAGE STYLES */
 
 #members header {
@@ -266,10 +232,6 @@
 		-webkit-column-count: 1;
 	    -moz-column-count: 1;
 	    column-count: 1;
-	}
-
-	#news .content {
-		width: 80%;
 	}
 
 	#auditions .content {

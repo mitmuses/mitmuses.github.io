@@ -1,9 +1,11 @@
-// create Angular module
+// create Angular module (app)
 var app = angular.module('app', ['ngRoute', 'firebase']);
 
-// configure routes and prettify urls
+// configure routes
 app.config(function($routeProvider, $locationProvider) {
 
+    // routes tell the angular app which view to load from the views folder
+    // when a user requests a certain url
     $routeProvider
 
         // home route
@@ -36,10 +38,13 @@ app.config(function($routeProvider, $locationProvider) {
             controller  : 'contact-controller'
         })
 
+        // catch all -- if the url requested is not listed above, redirect
+        // to the homepage
         .otherwise({
             redirectTo: '/'
         });
 
+    // this enables direct navigation
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
@@ -47,8 +52,7 @@ app.config(function($routeProvider, $locationProvider) {
 
 });
 
-// set up Firebase
-
+// set up Firebase (database)
 var config = {
     apiKey: "AIzaSyCh8DTmFzIZD_qwDcW3lnOhY7VldKAeGs8",
     authDomain: "mitmuses-8c97c.firebaseapp.com",
