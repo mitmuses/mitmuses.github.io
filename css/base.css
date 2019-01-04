@@ -73,7 +73,7 @@ header {
 	padding-top: 12em;
 	color: white;
 	background: linear-gradient(45deg, rgb(170, 64, 129), rgb(102, 12, 78));
-
+}
 header h1.title {
 	text-align: center;
 	font-family: 'Josefin Sans', sans-serif;
