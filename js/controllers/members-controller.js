@@ -10,4 +10,90 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 	$scope.members = $firebaseArray(members);
 	$scope.alumni = $firebaseArray(alumni);
 
+	// sortMembers: sorts alumni list
+	$scope.sortAlumni = function() {
+		var sorted = [];
+		for (var i = 0; i < $scope.alumni.length; i++) {
+			sorted.push($scope.alumni[i]);
+			$scope.alumni.$remove(i);
+		}
+		f = function(a, b) {
+			if (parseInt(a.year) > parseInt(b.year))
+				return -1; // recent class years first
+			if (parseInt(a.year) < parseInt(b.year))
+				return 1;
+			if (a.name < b.name) 
+				return -1;
+			if (a.name > b.name)
+				return 1;
+			return 0;
+		}
+		sorted.sort(f);
+		for (var j = 0; j < sorted.length; j++) {
+			$scope.alumni.$add(sorted[j]);
+		}
+		console.log("alumni sorted");
+	};
+	// sortMembers: sorts members list
+	$scope.sortMembers = function() {
+		var sorted = [];
+		for (var i = 0; i < $scope.members.length; i++) {
+			sorted.push($scope.members[i]);
+			$scope.members.$remove(i);
+		}
+		f = function(a, b) {
+			if (parseInt(a.year) < parseInt(b.year))
+				return -1; // older class years first
+			if (parseInt(a.year) > parseInt(b.year))
+				return 1;
+			if (a.name < b.name) 
+				return -1;
+			if (a.name > b.name)
+				return 1;
+			return 0;
+		}
+		sorted.sort(f);
+		for (var j = 0; j < sorted.length; j++) {
+			$scope.members.$add(sorted[j]);
+		}
+		console.log("members sorted");
+	};
+
+	// migrateAlumniByName: this method migrates people with names in
+	// names_to_migrate from members to alums list, then sorts the alums list
+	$scope.migrateAlumniByNames = function(names_to_migrate) {
+		for (var i = 0; i < $scope.members.length; i++) {
+			var memberName = $scope.members[i].name;
+			if (names_to_migrate.includes(memberName)) {
+				console.log(memberName)
+				var member = $scope.members[i];
+				console.log(member);
+				$scope.members.$remove(i);
+				$scope.alumni.$add(member);
+			}
+		}
+		$scope.sortAlumni();
+	}
+
+	// migrateAlumniByYear: this method migrates people with class years
+	// <= CURRENT_YEAR from members to alums list, then sorts the alums list
+	const CURRENT_YEAR = 2019;
+	$scope.migrateAlumniByYear = function() {
+		for (var i = 0; i < $scope.members.length; i++) {
+			var memberYear = parseInt($scope.members[i].year)
+			if (memberYear <= CURRENT_YEAR) {
+				var member = $scope.members[i];
+				console.log(member);
+				$scope.members.$remove(i);
+				$scope.alumni.$add(member);
+			}
+		}
+		$scope.sortAlumni();
+	}
+
+	// ** CALL THE ABOVE FUNCTIONS HERE ** //
+
+	// setTimeout ensures this code is run after the members/alumni arrays are populate
+	// setTimeout(function() { $scope.migrateAlumniByNames(["Netra Unni Rajesh", "Elsa Itambo"]) }, 3000);
+
 });
