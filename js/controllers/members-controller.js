@@ -61,10 +61,10 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 
 	// migrateAlumniByName: this method migrates people with names in
 	// names_to_migrate from members to alums list, then sorts the alums list
-	$scope.migrateAlumniByNames = function(names_to_migrate) {
+	$scope.migrateAlumniByNames = function(namesToMigrate) {
 		for (var i = 0; i < $scope.members.length; i++) {
 			var memberName = $scope.members[i].name;
-			if (names_to_migrate.includes(memberName)) {
+			if (namesToMigrate.includes(memberName)) {
 				console.log(memberName)
 				var member = $scope.members[i];
 				console.log(member);
@@ -77,11 +77,10 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 
 	// migrateAlumniByYear: this method migrates people with class years
 	// <= CURRENT_YEAR from members to alums list, then sorts the alums list
-	const CURRENT_YEAR = 2019;
-	$scope.migrateAlumniByYear = function() {
+	$scope.migrateAlumniByYear = function(currentYear) {
 		for (var i = 0; i < $scope.members.length; i++) {
 			var memberYear = parseInt($scope.members[i].year)
-			if (memberYear <= CURRENT_YEAR) {
+			if (memberYear <= currentYear) {
 				var member = $scope.members[i];
 				console.log(member);
 				$scope.members.$remove(i);
@@ -93,7 +92,11 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 
 	// ** CALL THE ABOVE FUNCTIONS HERE ** //
 
-	// setTimeout ensures this code is run after the members/alumni arrays are populate
-	// setTimeout(function() { $scope.migrateAlumniByNames(["Netra Unni Rajesh", "Elsa Itambo"]) }, 3000);
+	// Examples: (setTimeout ensures the code is run after the members/alumni arrays are populated)
+
+	// setTimeout(function() { $scope.sortMembers() }, 3000);
+	// setTimeout(function() { $scope.sortAlumni() }, 3000);
+	// setTimeout(function() { $scope.migrateAlumniByYear(2020) }, 3000);
+	// setTimeout(function() { $scope.migrateAlumniByNames(['Beyonce', 'Christina Aguilera']) }, 3000);
 
 });
