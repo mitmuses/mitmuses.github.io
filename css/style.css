@@ -126,6 +126,15 @@
 	padding: 2em;
 }
 
+#media ul.social {
+	list-style-type: none;
+	padding-left: 0;
+}
+#media ul.social li {
+	display: inline-block;
+	margin: 1em;
+}
+
 /* AUDITIONS PAGE STYLES */
 
 #auditions header {
