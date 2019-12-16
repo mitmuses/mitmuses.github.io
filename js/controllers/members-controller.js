@@ -90,6 +90,22 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 		$scope.sortAlumni();
 	}
 
+	// migrateAlumniByName: this method migrates people with names in
+	// names_to_migrate from alums to members list, then sorts the members list
+	$scope.migrateMembersByNames = function(namesToMigrate) {
+		for (var i = 0; i < $scope.alumni.length; i++) {
+			var memberName = $scope.alumni[i].name;
+			if (namesToMigrate.includes(memberName)) {
+				console.log(memberName)
+				var member = $scope.alumni[i];
+				console.log(member);
+				$scope.alumni.$remove(i);
+				$scope.members.$add(member);
+			}
+		}
+		$scope.sortMembers();
+	}
+
 	// ** CALL THE ABOVE FUNCTIONS HERE ** //
 
 	// Examples: (setTimeout ensures the code is run after the members/alumni arrays are populated)
@@ -98,5 +114,6 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 	// setTimeout(function() { $scope.sortAlumni() }, 3000);
 	// setTimeout(function() { $scope.migrateAlumniByYear(2020) }, 3000);
 	// setTimeout(function() { $scope.migrateAlumniByNames(['Beyonce', 'Christina Aguilera']) }, 3000);
+	// setTimeout(function() { $scope.migrateMembersByNames(['Beyonce', 'Christina Aguilera']) }, 3000);
 
 });
