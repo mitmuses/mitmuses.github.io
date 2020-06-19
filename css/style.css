@@ -176,6 +176,101 @@
 	margin-top: 2em;
 }
 
+/* ALUMNI MAP PAGE STYLES */
+
+
+#alumniMap header {
+	background: linear-gradient(0deg, rgba(130, 24, 89, 0.4), rgba(102, 12, 78, 0.8)), url('../img/alumniMap.jpg');
+	background-size: cover;
+	background-position: 50% 48%;
+}
+
+#alumniMap #loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid rgb(102, 12, 78); /* Purple */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  margin-left: -70px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#alumniMap .content{
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: #404040;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+#alumniMap #map-container{
+  margin-top: 10px;
+}
+
+#alumniMap .hoverboi {
+	font-family: 'Josefin Sans';
+	font-size: .9em;
+	display: block;
+	width: 140px;
+    background-color: black;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    text-align: left;
+	padding: 10px;
+	border-radius: 6px;
+
+	/* Control distance from top; the higher the number, the farther from the top the popup is */
+	margin-top: 230px;
+
+}
+
+#alumniMap .hoverboi::after {
+	content: " ";
+	position: absolute;
+	top: 100%; /* At the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+}
+
+#alumniMap .all-alumni {
+  margin-top: 40px;
+}
+
+#alumniMap .all-alumni h2{
+  margin-bottom: 30px;
+}
+
+#alumniMap .alumni {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  list-style-type: none;
+  padding-left: 0;
+  width: 60%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+#alumniMap .alumni p {
+  display: inline-block;
+  margin-bottom: 10px
+}
+
 @media (min-aspect-ratio: 16/9) {
 	#home .fs-video {
 	    height: 200%;
@@ -187,6 +282,16 @@
 	#home .fs-video {
 		width: 200%;
 		left: -50%;
+	}
+}
+
+@media (max-width: 800px) {
+	#alumniMap .hoverboi {
+		margin-top: 160px;
+	}
+
+	#alumniMap #loader {
+		top: 55%;
 	}
 }
 
@@ -255,5 +360,18 @@
 
 	#contact .block {
 		display: block;
+	}
+
+	#alumniMap #alumni {
+	    -webkit-column-count: 1;
+    	-moz-column-count: 1;
+    	column-count: 1;
+	}
+
+	#alumniMap #loader {
+		width: 100px;
+  		height: 100px;
+		top: 50%;
+		margin-left: -55px;
 	}
 }

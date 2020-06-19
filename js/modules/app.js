@@ -38,6 +38,12 @@ app.config(function($routeProvider, $locationProvider) {
             controller  : 'contact-controller'
         })
 
+        // alumniMap route
+        .when('/alumniMap', {
+            templateUrl : '/views/alumniMap.html',
+            controller  : 'alumniMap-controller'
+        })
+
         // catch all -- if the url requested is not listed above, redirect
         // to the homepage
         .otherwise({
