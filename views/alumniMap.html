@@ -3,7 +3,7 @@
 		<h1 class="title">{{ title }}</h1>
 	</header>
 	<div class="content">
-		<h2>Where are Muses Alumni?</h2>
+		<h2>Where are Muses Alumni & Members?</h2>
 		<p>Mouse over any of the bubbles on the map below to see who lives in that area, or scroll down to see the complete list!</p>
   		<div id="loader"></div>
 		<div id="map-container" style="display: inline-block; width: 100%;"></div>
@@ -52,7 +52,7 @@
 
 
 		        all_alumni_html = document.getElementById("all-alumni");
-		        all_alumni_html.innerHTML = "<h3>Alumni Current Location</h3>"+create_table(all_alumni);
+		        all_alumni_html.innerHTML = "<h3>Alumni & Members Current Location</h3>"+create_table(all_alumni);
 
 		        $("#all-alumni").fadeIn()
 		        $("#loader").fadeOut()
