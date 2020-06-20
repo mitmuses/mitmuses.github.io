@@ -127,12 +127,12 @@ async function process_results(results) {
     bubble_list = []
     for (let [loc, alumn_list] of Object.entries(organized_by_location)) {
 
-      let geo = await get_lat_and_lon(loc);
+      let geo = await get_lat_and_lon(loc+", US");
       let lat = geo[0];
       let lon = geo[1];
 
       bubble_list.push({location: loc, latitude: lat, 
-             longitude: lon, radius: 5, fillKey: 'bubble', 
+             longitude: lon, radius: 3, fillKey: 'bubble', 
              alumns: alumn_list});
     }
 
