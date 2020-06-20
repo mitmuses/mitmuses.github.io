@@ -169,7 +169,7 @@ async function create_bubble_list() {
 
 function create_popup(location, alumns) {
 
-   	alumns_html = 'Resident Alumni:'
+   	alumns_html = 'Residents:'
    	for (var i=0; i<alumns.length; i++){
    		alumn = alumns[i];
    		alumns_html += "<br>> "+alumn;

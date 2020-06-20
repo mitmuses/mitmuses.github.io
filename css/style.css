@@ -221,12 +221,12 @@
 	font-family: 'Josefin Sans';
 	font-size: .9em;
 	display: block;
-	width: 140px;
+	width: 156px;
     background-color: black;
     color: #fff;
     position: absolute;
     left: 50%;
-    margin-left: -70px;
+    margin-left: -78px;
     text-align: left;
 	padding: 10px;
 	border-radius: 6px;
@@ -292,6 +292,20 @@
 
 	#alumniMap #loader {
 		top: 55%;
+	}
+
+	#alumniMap #alumni {
+	    -webkit-column-count: 2;
+    	-moz-column-count: 2;
+    	column-count: 2;
+	}
+}
+
+@media (max-width: 770) {
+	#alumniMap #alumni {
+	    -webkit-column-count: 1;
+    	-moz-column-count: 1;
+    	column-count: 1;
 	}
 }
 
