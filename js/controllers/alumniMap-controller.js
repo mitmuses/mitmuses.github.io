@@ -59,6 +59,10 @@ async function process_results(results) {
             "timestamp": timestamp,
             "year": year
             };
+
+            if ("map-specific location" in element && !!element["map-specific location"]) {
+              organized_by_alumn[alumn]["location"] = element["map-specific location"]+", "+state;
+            }
           }
         }else{
           organized_by_alumn[alumn] = {
@@ -66,6 +70,10 @@ async function process_results(results) {
           "timestamp": timestamp,
           "year": year
           };
+
+          if ("map-specific location" in element && !!element["map-specific location"]) {
+            organized_by_alumn[alumn]["location"] = element["map-specific location"]+", "+state;
+          }
         }
 
         if (alumn in name_list) {
