@@ -6,6 +6,7 @@ app.controller('alumniMap-controller', function($scope, $firebaseArray) {
    
 });
 
+
 // Alumni Map js functions: ----------------------------------------------------
 
 async function get_lat_and_lon(location) {
@@ -178,11 +179,12 @@ async function create_bubble_list() {
 function create_popup(location, alumns) {
 
    	alumns_html = 'Residents:'
+    alumns_html += '<br><ul class="popup">\n'
    	for (var i=0; i<alumns.length; i++){
    		alumn = alumns[i];
-   		alumns_html += "<br>> "+alumn;
+   		alumns_html += "<li>"+alumn+"</li>\n";
    	}
-   	//alumns_html += "</div>"
+   	alumns_html += "</ul>"
     return "<b>"+location+"</b>"+"<br>"+alumns_html;
 }
 
