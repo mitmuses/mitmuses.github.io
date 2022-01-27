@@ -92,7 +92,7 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 
 	// migrateAlumniByName: this method migrates people with names in
 	// names_to_migrate from alums to members list, then sorts the members list
-	// $scope.migrateMembersByNames = function(namesToMigrate) {
+	$scope.migrateMembersByNames = function(namesToMigrate) {
 		for (var i = 0; i < $scope.alumni.length; i++) {
 			var memberName = $scope.alumni[i].name;
 			if (namesToMigrate.includes(memberName)) {
