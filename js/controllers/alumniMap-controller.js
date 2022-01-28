@@ -44,14 +44,15 @@ async function process_results(results) {
   var organized_by_alumn = {};
 
     results.forEach(element => {
-      alumn = element["what's your name?"];
-      year = element["what's your class year? (write 97 for class of 1997, and so forth!)"];
-      us = element["are you in the us?"];
-      timestamp = Date.parse(element["timestamp"]);
+      console.log("Next person")
+      alumn = element[1];
+      year = element[2];
+      us = element[5];
+      timestamp = Date.parse(element[0]);
 
       if (us == "Yes"){
-        city = element["what city are you in?"];
-        state = element["what state are you in?"];
+        city = element[3];
+        state = element[4];
 
         if (alumn in organized_by_alumn) {
           if (organized_by_alumn[alumn]["timestamp"] < timestamp){
@@ -100,7 +101,7 @@ async function process_results(results) {
           }
         }
 
-        place = element["where are you? (city, country)"];
+        place = element[6];
         if (alumn in name_list) {
           if (name_list[alumn]["timestamp"] < timestamp){
             name_list[alumn] = {
@@ -123,6 +124,7 @@ async function process_results(results) {
     organized_by_location = {};
 
     for (let [alumn, val] of Object.entries(organized_by_alumn)) {
+      console.log("Organized by location");
         loc = val.location;
         year = val.year;
         alumn_with_year = alumn + " '"+year;
@@ -135,8 +137,8 @@ async function process_results(results) {
     
     bubble_list = []
     for (let [loc, alumn_list] of Object.entries(organized_by_location)) {
-
-      let geo = await get_lat_and_lon(loc+", US");
+      console.log("bubble sheet build");
+      let geo =  await get_lat_and_lon(loc+", US");
       let lat = geo[0];
       let lon = geo[1];
 
@@ -152,7 +154,7 @@ async function process_results(results) {
         list_entry = alumn + " '"+year+" &bull; "+loc;
         all_alumni.push(list_entry);
     }
-
+    console.log("Finished bubble sheet");
     return [bubble_list, all_alumni];
 }
 
@@ -172,6 +174,7 @@ async function convert_sheet_to_bubble_list(id) {
 async function create_bubble_list() {
 	let id = "12lGrmIhj2dlLHt2GNucD69IktFoOA5k9Zi9rnLR0OoI";
 	let bubble_list = await convert_sheet_to_bubble_list(id);
+  console.log(bubble_list);
 	return bubble_list;
 }
 
@@ -312,15 +315,15 @@ function processGSheetResults(JSONResponse, returnAllResults, filter, filterOpti
 const gsheetProcessor = function (options, callback) {
 
   return gsheetsAPI(options.sheetId, options.sheetNumber ? options.sheetNumber : 1).then(result => {
-    const filteredResults = processGSheetResults(
-      result,
-      options.returnAllResults || false,
-      options.filter || false,
-      options.filterOptions || {
-        operator: 'or',
-        matching: 'loose'
-      });
-    return callback(filteredResults);
+    // const filteredResults = processGSheetResults(
+    //   result,
+    //   options.returnAllResults || false,
+    //   options.filter || false,
+    //   options.filterOptions || {
+    //     operator: 'or',
+    //     matching: 'loose'
+    //   });
+    return callback(result);
   })
 };
 
@@ -332,18 +335,18 @@ const gsheetProcessor = function (options, callback) {
 const gsheetsAPI = function (sheetId, sheetNumber = 1) {
 
   try {
-    const sheetsUrl = `https://spreadsheets.google.com/feeds/cells/${sheetId}/${sheetNumber}/public/values?alt=json-in-script`;
+    const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/12lGrmIhj2dlLHt2GNucD69IktFoOA5k9Zi9rnLR0OoI/values/Form%20Responses%201!A:I?key=AIzaSyBd8KE4HameGhFpDsvOZUxvmFjnAyg6Ig4`;
 
     return window.fetch(sheetsUrl)
       .then(response => {
         if (!response.ok) {
           throw new Error('Error fetching sheet');
         }
-        return response.text();
+        return response.json();
       })
-      .then(resultText => {
-        const formattedText = resultText.replace('gdata.io.handleScriptLoaded(', '').slice(0, -2);
-        return JSON.parse(formattedText);
+      .then(json => {
+        console.log(json.values.slice(1))
+        return json.values.slice(1)
       });
 
   } catch (err) {
