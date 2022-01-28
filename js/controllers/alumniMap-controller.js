@@ -43,12 +43,19 @@ async function process_results(results) {
   var name_list = {}
   var organized_by_alumn = {};
 
+  var location_dict = {}
+
     results.forEach(element => {
-      console.log("Next person")
       alumn = element[1];
       year = element[2];
       us = element[5];
       timestamp = Date.parse(element[0]);
+
+      lat = element[9]
+      lon = element[10]
+      console.log(lat,lon)
+      area = element[7]
+      console.log(area)
 
       if (us == "Yes"){
         city = element[3];
@@ -59,22 +66,29 @@ async function process_results(results) {
             organized_by_alumn[alumn] = {
             "location": city+", "+state,
             "timestamp": timestamp,
-            "year": year
+            "year": year,
+            "lat": lat,
+            "lon":lon
             };
 
-            if ("map-specific location" in element && !!element["map-specific location"]) {
-              organized_by_alumn[alumn]["location"] = element["map-specific location"]+", "+state;
+            if (element[7]) {
+              organized_by_alumn[alumn]["location"] = element[7]+", "+state;
+              console.log("area");
             }
           }
         }else{
           organized_by_alumn[alumn] = {
           "location": city+", "+state,
           "timestamp": timestamp,
-          "year": year
+          "year": year,
+          "lat": lat,
+          "lon":lon
           };
 
-          if ("map-specific location" in element && !!element["map-specific location"]) {
-            organized_by_alumn[alumn]["location"] = element["map-specific location"]+", "+state;
+          if (element[7]) {
+            organized_by_alumn[alumn]["location"] = element[7]+", "+state;
+            console.log("area");
+
           }
         }
 
@@ -83,14 +97,18 @@ async function process_results(results) {
             name_list[alumn] = {
             "location": city+", "+state,
             "timestamp": timestamp,
-            "year": year
+            "year": year,
+            "lat": lat,
+            "lon":lon
             };
           }
         }else{
           name_list[alumn] = {
           "location": city+", "+state,
           "timestamp": timestamp,
-          "year": year
+          "year": year,
+          "lat": lat,
+          "lon":lon
           };
         }
       } else {
@@ -107,14 +125,18 @@ async function process_results(results) {
             name_list[alumn] = {
             "location": place,
             "timestamp": timestamp,
-            "year": year
+            "year": year,
+            "lat": lat,
+            "lon":lon
             };
           }
         }else{
           name_list[alumn] = {
           "location": place,
           "timestamp": timestamp,
-          "year": year
+          "year": year,
+          "lat": lat,
+          "lon":lon
           };
         }
       }
@@ -126,6 +148,13 @@ async function process_results(results) {
     for (let [alumn, val] of Object.entries(organized_by_alumn)) {
       console.log("Organized by location");
         loc = val.location;
+        console.log(loc);
+        if(loc in location_dict){
+          //
+        }
+        else{
+          location_dict[loc] = [val.lat,val.lon]
+        }
         year = val.year;
         alumn_with_year = alumn + " '"+year;
         if (loc in organized_by_location){
@@ -134,13 +163,12 @@ async function process_results(results) {
           organized_by_location[loc] = [alumn_with_year];
         }
     }
-    
+
     bubble_list = []
-    for (let [loc, alumn_list] of Object.entries(organized_by_location)) {
-      console.log("bubble sheet build");
-      let geo =  await get_lat_and_lon(loc+", US");
-      let lat = geo[0];
-      let lon = geo[1];
+    for ( let [loc, alumn_list] of Object.entries(organized_by_location)) {
+      // let geo =  await get_lat_and_lon(loc+", US");
+      let lat = location_dict[loc][0];
+      let lon = location_dict[loc][1];
 
       bubble_list.push({location: loc, latitude: lat, 
              longitude: lon, radius: 3, fillKey: 'bubble', 
@@ -154,7 +182,6 @@ async function process_results(results) {
         list_entry = alumn + " '"+year+" &bull; "+loc;
         all_alumni.push(list_entry);
     }
-    console.log("Finished bubble sheet");
     return [bubble_list, all_alumni];
 }
 
@@ -174,7 +201,6 @@ async function convert_sheet_to_bubble_list(id) {
 async function create_bubble_list() {
 	let id = "12lGrmIhj2dlLHt2GNucD69IktFoOA5k9Zi9rnLR0OoI";
 	let bubble_list = await convert_sheet_to_bubble_list(id);
-  console.log(bubble_list);
 	return bubble_list;
 }
 
@@ -335,7 +361,7 @@ const gsheetProcessor = function (options, callback) {
 const gsheetsAPI = function (sheetId, sheetNumber = 1) {
 
   try {
-    const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/12lGrmIhj2dlLHt2GNucD69IktFoOA5k9Zi9rnLR0OoI/values/Form%20Responses%201!A:I?key=AIzaSyBd8KE4HameGhFpDsvOZUxvmFjnAyg6Ig4`;
+    const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/12lGrmIhj2dlLHt2GNucD69IktFoOA5k9Zi9rnLR0OoI/values/Form%20Responses%201!A:K?key=AIzaSyBd8KE4HameGhFpDsvOZUxvmFjnAyg6Ig4`;
 
     return window.fetch(sheetsUrl)
       .then(response => {
@@ -345,7 +371,6 @@ const gsheetsAPI = function (sheetId, sheetNumber = 1) {
         return response.json();
       })
       .then(json => {
-        console.log(json.values.slice(1))
         return json.values.slice(1)
       });
 
