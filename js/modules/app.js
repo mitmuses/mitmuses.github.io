@@ -60,10 +60,15 @@ app.config(function($routeProvider, $locationProvider) {
 
 // set up Firebase (database)
 var config = {
-    apiKey: "AIzaSyCh8DTmFzIZD_qwDcW3lnOhY7VldKAeGs8",
-    authDomain: "mitmuses-8c97c.firebaseapp.com",
-    databaseURL: "https://mitmuses-8c97c.firebaseio.com",
-    storageBucket: "mitmuses-8c97c.appspot.com",
-    messagingSenderId: "679403663997"
+    // apiKey: "AIzaSyCh8DTmFzIZD_qwDcW3lnOhY7VldKAeGs8",
+    // authDomain: "mitmuses-8c97c.firebaseapp.com",
+    // databaseURL: "https://mitmuses-8c97c.firebaseio.com",
+    // storageBucket: "mitmuses-8c97c.appspot.com",
+    // messagingSenderId: "679403663997"
+    apiKey: "AIzaSyAstqYXPRUD8ARWlhffO_l8VroPoY9kEjs",
+    authDomain: "mitmuses-8c97c-restore.firebaseapp.com",
+    databaseURL: "https://mitmuses-8c97c-restore.firebaseio.com",
+    storageBucket: "mitmuses-8c97c-restore.appspot.com",
+    messagingSenderId: "102569702918"
 };
 firebase.initializeApp(config);
