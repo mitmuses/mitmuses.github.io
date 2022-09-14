@@ -67,7 +67,7 @@ var config = {
     // messagingSenderId: "679403663997"
     apiKey: "AIzaSyAstqYXPRUD8ARWlhffO_l8VroPoY9kEjs",
     authDomain: "mitmuses-8c97c-restore.firebaseapp.com",
-    databaseURL: "https://mitmuses-8c97c-restore.firebaseio.com",
+    databaseURL: "https://mitmuses-8c97c-restore-default-rtdb.firebaseio.com",
     storageBucket: "mitmuses-8c97c-restore.appspot.com",
     messagingSenderId: "102569702918"
 };
