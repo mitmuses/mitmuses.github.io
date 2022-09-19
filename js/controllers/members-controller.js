@@ -112,6 +112,7 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 
 	// setTimeout(function() { $scope.sortMembers() }, 3000);
 	// setTimeout(function() { $scope.sortAlumni() }, 3000);
+	// just uncomment the code below to migrate alumni, change year
 	// setTimeout(function() { $scope.migrateAlumniByYear(2022) }, 3000);
 	// setTimeout(function() { $scope.migrateAlumniByNames(['Beyonce', 'Christina Aguilera']) }, 3000);
 	// setTimeout(function() { $scope.migrateMembersByNames(['Beyonce', 'Christina Aguilera']) }, 3000);
