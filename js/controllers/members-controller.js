@@ -10,7 +10,7 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 	$scope.members = $firebaseArray(members);
 	$scope.alumni = $firebaseArray(alumni);
 
-	// sortMembers: sorts alumni list
+	// sortAlumni: sorts alumni list
 	$scope.sortAlumni = function() {
 		var sorted = [];
 		for (var i = 0; i < $scope.alumni.length; i++) {
@@ -90,7 +90,7 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 		$scope.sortAlumni();
 	}
 
-	// migrateAlumniByName: this method migrates people with names in
+	// migrateMembersByNames: this method migrates people with names in
 	// names_to_migrate from alums to members list, then sorts the members list
 	$scope.migrateMembersByNames = function(namesToMigrate) {
 		for (var i = 0; i < $scope.alumni.length; i++) {
@@ -110,7 +110,7 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 
 	// Examples: (setTimeout ensures the code is run after the members/alumni arrays are populated)
 
-	// setTimeout(function() { $scope.sortMembers() }, 3000);
+	setTimeout(function() { $scope.sortMembers() }, 3000);
 	// setTimeout(function() { $scope.sortAlumni() }, 3000);
 	// just uncomment the code below to migrate alumni, change year
 	// setTimeout(function() { $scope.migrateAlumniByYear(2022) }, 3000);
