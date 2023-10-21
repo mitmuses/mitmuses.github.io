@@ -110,11 +110,11 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 
 	// Examples: (setTimeout ensures the code is run after the members/alumni arrays are populated)
 
-	// setTimeout(function() { $scope.sortMembers() }, 3000);
-	// setTimeout(function() { $scope.sortAlumni() }, 3000);
+	setTimeout(function() { $scope.sortMembers() }, 3000);
+	setTimeout(function() { $scope.sortAlumni() }, 3000);
 	// just uncomment the code below to migrate alumni, change year
 	// setTimeout(function() { $scope.migrateAlumniByYear(2022) }, 3000);
-	setTimeout(function() { $scope.migrateAlumniByNames(['Anushka Nair', 'Marissa Abbott', 'Mri Mandal', 'Cindy Xie', 'Kaitlin Lim', 'Leah Prizant', 'Eva Ge']) }, 3000);
+	// setTimeout(function() { $scope.migrateAlumniByNames(['Anushka Nair', 'Marissa Abbott', 'Mri Mandal', 'Cindy Xie', 'Kaitlin Lim', 'Leah Prizant', 'Eva Ge']) }, 3000);
 	// setTimeout(function() { $scope.migrateMembersByNames(['Beyonce', 'Christina Aguilera']) }, 3000);
 
 });
