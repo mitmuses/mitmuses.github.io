@@ -117,5 +117,4 @@ app.controller('members-controller', function($scope, $firebaseArray) {
 	// setTimeout(function() { $scope.migrateAlumniByNames(['Opalina Vetrichelvan', 'Ashley Williams', 'Elhana Sugiaman', 'Rachel Park', 'Lucia Wang', 'Shreya Mogulothu']) }, 3000);
 	// setTimeout(function() { $scope.migrateMembersByNames(['Beyonce', 'Christina Aguilera']) }, 3000);
 
-	setTimeout(function() { $scope.migrateMembersByNames(['Rachel Park']) }, 3000);
 });
